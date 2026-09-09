@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+
+@immutable
+abstract class SplashState {}
+
+@immutable
+class SplashInitial extends SplashState {}
+
+@immutable
+class SplashLoading extends SplashState {}
+
+@immutable
+class SplashLoaded extends SplashState {}
+
+@immutable
+class SplashLocationRequested extends SplashState {}
+
+@immutable
+class SplashLocationDisabled extends SplashState {}
+
+@immutable
+class SplashNetworkError extends SplashState {
+  final String error;
+
+  SplashNetworkError({required this.error});
+
+  List<Object> get props => [error];
+}
